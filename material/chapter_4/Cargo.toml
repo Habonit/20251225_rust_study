@@ -1,0 +1,48 @@
+[package]
+name = "chapter_4"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+# 정답 파일 - 각 예제를 개별적으로 실행 가능
+[[bin]]
+name = "01_if_else"
+path = "src/bin/01_if_else.rs"
+
+[[bin]]
+name = "02_for_loop"
+path = "src/bin/02_for_loop.rs"
+
+[[bin]]
+name = "03_while_loop"
+path = "src/bin/03_while_loop.rs"
+
+[[bin]]
+name = "04_loop"
+path = "src/bin/04_loop.rs"
+
+[[bin]]
+name = "05_match"
+path = "src/bin/05_match.rs"
+
+# 연습문제 (quiz) - 빈칸을 채워서 완성하세요
+[[bin]]
+name = "01_if_else_quiz"
+path = "src/bin/01_if_else_quiz.rs"
+
+[[bin]]
+name = "02_for_loop_quiz"
+path = "src/bin/02_for_loop_quiz.rs"
+
+[[bin]]
+name = "03_while_loop_quiz"
+path = "src/bin/03_while_loop_quiz.rs"
+
+[[bin]]
+name = "04_loop_quiz"
+path = "src/bin/04_loop_quiz.rs"
+
+[[bin]]
+name = "05_match_quiz"
+path = "src/bin/05_match_quiz.rs"
