@@ -28,7 +28,7 @@ let x = 10;
 println!("x = {}", x);
 ```
 
-- `{:?}` 이건 debug fksms rust의 표준라이브러리의 trait의 일종이다. 
+- `{:?}` 이건 debug 라는 rust의 표준라이브러리의 trait의 일종이다. 
 ```rust
 let numbers = [1, 2, 3];
 
@@ -38,7 +38,7 @@ println!("{:?}", numbers);  // [1, 2, 3]
 // Pretty Debug - 복잡한 구조체를 보기 좋게
 println!("{:#?}", numbers); // 들여쓰기 포함된 출력
 
-``
+```
 
 > 실습 파일: `src/bin/01_print.rs`
 
