@@ -11,7 +11,8 @@ fn function_scope() {
 
 /// 인사하는 함수 (String 파라미터)
 fn hello(name: String) {
-    let greeting = /* TODO: format! 매크로로 "Hello {name}" 생성 */;
+    /* TODO: format! 매크로로 "Hello {name}" 생성 */
+    let greeting = format!("Hello {}", name);
     println!("{}", greeting);
 }
 
@@ -25,7 +26,8 @@ fn main() {
         // 내부 스코프
         let inner = 200;
         // 힌트: 내부 블록에서는 outer와 inner 모두 접근 가능
-        println!("내부 블록: outer = {}, inner = {}", /* TODO */, /* TODO */);
+        /* TODO */
+        println!("내부 블록: outer = {}, inner = {}", outer, inner);
     }
 
     // inner는 여기서 접근 불가
@@ -39,7 +41,8 @@ fn main() {
 
     {
         // 힌트: 같은 이름으로 새 변수를 선언하면 섀도잉됩니다
-        let x = /* TODO: 내부 스코프에서 x를 20으로 섀도잉 */;
+        /* TODO: 내부 스코프에서 x를 20으로 섀도잉 */
+        let x = 20;
         println!("내부 (섀도잉): x = {}", x);
     }
 
@@ -63,12 +66,14 @@ fn main() {
     // 4. 함수 스코프
     println!("\n=== 함수 스코프 ===");
     /* TODO: function_scope 함수 호출 */
+    function_scope();
     // println!("{}", x);  // function_scope의 x는 접근 불가
 
     // 5. 파이썬과의 차이점 예시
     println!("\n=== 파이썬과의 차이 ===");
     // 힌트: to_string() 메서드로 String 타입 생성
-    let my_name = /* TODO: "buzzi" 문자열을 String으로 변환 */;
+    /* TODO: "buzzi" 문자열을 String으로 변환 */
+    let my_name = "buzzi".to_string();
 
     {
         // 파이썬에서는 if 블록 내부 변수도 외부에서 접근 가능
@@ -88,6 +93,7 @@ fn main() {
         let x = 10;
         let y = 20;
         /* TODO: x + y를 블록의 결과값으로 (세미콜론 없이) */
+        x + y
     };
     println!("블록 표현식 결과: {}", result);
 }

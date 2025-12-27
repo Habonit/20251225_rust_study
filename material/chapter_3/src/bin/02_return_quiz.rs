@@ -5,12 +5,14 @@
 /// return 키워드를 사용한 함수
 fn add_with_return(a: i32, b: i32) -> i32 {
     /* TODO: return 키워드로 a + b 리턴 */
+    return a + b;
 }
 
 /// return 키워드 생략 (세미콜론 없음!)
 /// 힌트: 마지막 표현식에 세미콜론을 붙이지 않으면 자동으로 리턴됩니다
 fn add_without_return(a: i32, b: i32) -> i32 {
     /* TODO: return 없이 리턴 */
+    a + b
 }
 
 /// 조건에 따라 다른 값 리턴 (early return)
@@ -18,27 +20,33 @@ fn add_without_return(a: i32, b: i32) -> i32 {
 fn absolute(n: i32) -> i32 {
     if n < 0 {
         /* TODO: early return으로 -n 리턴 */
+        return -n;
     }
     n
 }
 
 /// 두 값을 교환하여 리턴 (튜플 리턴)
 /// 힌트: 튜플은 (value1, value2) 형태입니다
-fn swap(a: i32, b: i32) -> /* TODO: 튜플 리턴 타입 */ {
+/* TODO: 튜플 리턴 타입 */
+fn swap(a: i32, b: i32) -> (i32, i32) {
     /* TODO: b, a 순서로 튜플 리턴 */
+    (b, a)
 }
 
 /// 나눗셈의 몫과 나머지를 함께 리턴
 fn div_mod(dividend: i32, divisor: i32) -> (i32, i32) {
     let quotient = dividend / divisor;
-    let remainder = /* TODO: 나머지 연산 */;
+    /* TODO: 나머지 연산 */
+    let remainder = dividend % divisor;
     /* TODO: quotient와 remainder를 튜플로 리턴 */
+    (quotient, remainder)
 }
 
 /// 최솟값과 최댓값을 함께 리턴
 fn min_max(a: i32, b: i32) -> (i32, i32) {
     if a < b {
         /* TODO: (min, max) 순서로 리턴 */
+        (a, b)
     } else {
         (b, a)
     }
@@ -51,7 +59,8 @@ fn print_message(msg: &str) {
 
 /// Unit 타입을 명시적으로 표기
 /// 힌트: Unit 타입은 ()로 표기합니다
-fn print_message_explicit(msg: &str) -> /* TODO: Unit 타입 */ {
+/* TODO: Unit 타입 */
+fn print_message_explicit(msg: &str) -> () {
     println!("{}", msg);
 }
 
@@ -70,12 +79,14 @@ fn main() {
     // 3. 튜플 리턴
     println!("\n=== 튜플 리턴 ===");
     // 힌트: 튜플 구조분해를 사용합니다
-    let /* TODO: (x, y) 형태로 구조분해 */ = swap(1, 2);
+    /* TODO: (x, y) 형태로 구조분해 */
+    let (x, y) = swap(1, 2);
     println!("swap(1, 2) = ({}, {})", x, y);
 
     // 4. 여러 값 리턴
     println!("\n=== 여러 값 리턴 ===");
-    let (quotient, remainder) = /* TODO: div_mod(17, 5) 호출 */;
+    /* TODO: div_mod(17, 5) 호출 */
+    let (quotient, remainder) = div_mod(17, 5);
     println!("17 / 5 = {} 나머지 {}", quotient, remainder);
 
     let (min, max) = min_max(10, 3);
@@ -85,7 +96,8 @@ fn main() {
     println!("\n=== 튜플 인덱스 접근 ===");
     let result = div_mod(20, 7);
     // 힌트: 튜플 요소는 .0, .1로 접근합니다
-    println!("몫: {}, 나머지: {}", /* TODO: 인덱스 접근 */, /* TODO */);
+    /* TODO: 인덱스 접근 */
+    println!("몫: {}, 나머지: {}", result.0, result.1);
 
     // 6. Unit 타입 함수
     println!("\n=== Unit 타입 함수 ===");

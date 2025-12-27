@@ -10,6 +10,7 @@ Rust의 함수 선언 기본 개념을 학습합니다.
 - 튜플을 사용한 여러 값 리턴
 - 스코프(scope)와 변수 유효 범위
 - 클로저(Closure) - 익명 함수
+- 매크로(Macro) - 코드를 생성하는 코드
 
 ---
 
@@ -67,7 +68,7 @@ fn main() {
 - `println!`: 디버깅, 로그, 사용자에게 즉시 보여줄 때
 - `format!`: 문자열을 변수에 저장하거나 함수에서 반환할 때
 
-> 실습 파일: `src/bin/01_functions.rs`
+> 실습 파일: `src/bin/01_functions_quiz.rs`
 
 ---
 
@@ -109,7 +110,7 @@ fn print_hello() -> () {
 }
 ```
 
-> 실습 파일: `src/bin/02_return.rs`
+> 실습 파일: `src/bin/02_return_quiz.rs`
 
 ---
 
@@ -137,7 +138,7 @@ fn main() {
 | 함수 단위 스코프 | `{}` 블록 단위 스코프 |
 | if 내부 변수도 외부에서 접근 가능 | 블록 밖에서 접근 불가 |
 
-> 실습 파일: `src/bin/03_scope.rs`
+> 실습 파일: `src/bin/03_scope_quiz.rs`
 
 ---
 
@@ -169,7 +170,42 @@ println!("{}", add_one(5));  // 6
 |:------|:------|
 | `lambda x: x + 1` | `\|x\| x + 1` |
 
-> 실습 파일: `src/bin/04_closure.rs`
+> 실습 파일: `src/bin/04_closure_quiz.rs`
+
+---
+
+## 5. 매크로 (Macro)
+
+매크로는 컴파일 타임에 코드를 생성하는 메타프로그래밍 기법입니다.
+
+### 함수와의 차이
+
+| 특징 | 함수 | 매크로 |
+|:-----|:-----|:------|
+| 실행 시점 | 런타임 | 컴파일 타임 |
+| 인수 개수 | 고정 | 가변 |
+| 호출 방법 | `func()` | `macro!()` |
+
+### 자주 사용하는 표준 매크로
+
+```rust
+// println! - 포맷 출력
+println!("Hello, {}!", name);
+
+// vec! - 벡터 생성
+let v = vec![1, 2, 3];
+
+// format! - 문자열 포맷팅
+let s = format!("x = {}", x);
+
+// dbg! - 디버그 출력
+let result = dbg!(2 + 2);
+
+// assert! - 조건 확인
+assert!(1 + 1 == 2);
+```
+
+> 실습 파일: `src/bin/05_macros_quiz.rs`
 
 ---
 
@@ -177,44 +213,26 @@ println!("{}", add_one(5));  // 6
 
 ```
 src/bin/
-├── 01_functions.rs       # 정답: 함수 선언
-├── 01_functions_quiz.rs  # 문제: 빈칸 채우기
-├── 02_return.rs          # 정답: 리턴값
-├── 02_return_quiz.rs     # 문제: 빈칸 채우기
-├── 03_scope.rs           # 정답: 스코프
-├── 03_scope_quiz.rs      # 문제: 빈칸 채우기
-├── 04_closure.rs         # 정답: 클로저
-└── 04_closure_quiz.rs    # 문제: 빈칸 채우기
+├── 01_functions_quiz.rs  # 함수 선언
+├── 02_return_quiz.rs     # 리턴값
+├── 03_scope_quiz.rs      # 스코프
+├── 04_closure_quiz.rs    # 클로저
+└── 05_macros_quiz.rs     # 매크로
 ```
 
-- **정답 파일** (`XX_name.rs`): 완성된 예제 코드
-- **문제 파일** (`XX_name_quiz.rs`): `/* TODO */` 빈칸을 채워서 완성하는 문제지
+각 퀴즈 파일에는 `/* TODO */` 빈칸이 있습니다. 빈칸을 채워서 프로그램을 완성하세요.
 
 ---
 
 ## 실행 방법
 
-### 정답 실행 (학습용)
-
 ```bash
-cargo run --bin 01_functions
-cargo run --bin 02_return
-cargo run --bin 03_scope
-cargo run --bin 04_closure
-```
-
-### 문제 풀이
-
-1. `*_quiz.rs` 파일을 열어 `/* TODO */` 부분을 채웁니다
-2. 주석 처리된 `println!` 문을 해제합니다
-3. 실행하여 결과를 확인합니다
-
-```bash
-# 문제 실행
+# 퀴즈 실행 (TODO를 채운 후)
 cargo run --bin 01_functions_quiz
-
-# 정답과 비교
-cargo run --bin 01_functions
+cargo run --bin 02_return_quiz
+cargo run --bin 03_scope_quiz
+cargo run --bin 04_closure_quiz
+cargo run --bin 05_macros_quiz
 ```
 
 ---
