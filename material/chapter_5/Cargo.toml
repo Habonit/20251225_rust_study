@@ -1,0 +1,36 @@
+[package]
+name = "chapter_5"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "01_ownership_basics"
+path = "src/bin/01_ownership_basics.rs"
+
+[[bin]]
+name = "01_ownership_basics_quiz"
+path = "src/bin/01_ownership_basics_quiz.rs"
+
+[[bin]]
+name = "02_reference"
+path = "src/bin/02_reference.rs"
+
+[[bin]]
+name = "02_reference_quiz"
+path = "src/bin/02_reference_quiz.rs"
+
+[[bin]]
+name = "03_mutable_reference"
+path = "src/bin/03_mutable_reference.rs"
+
+[[bin]]
+name = "03_mutable_reference_quiz"
+path = "src/bin/03_mutable_reference_quiz.rs"
+
+[[bin]]
+name = "04_closure_ownership"
+path = "src/bin/04_closure_ownership.rs"
+
+[[bin]]
+name = "04_closure_ownership_quiz"
+path = "src/bin/04_closure_ownership_quiz.rs"
