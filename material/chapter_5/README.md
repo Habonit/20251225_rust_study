@@ -22,26 +22,18 @@ chapter_5/
 ├── Cargo.toml
 ├── README.md
 └── src/bin/
-    ├── 01_ownership_basics.rs       # 소유권 기본 예제
     ├── 01_ownership_basics_quiz.rs  # 소유권 기본 퀴즈
-    ├── 02_reference.rs              # 레퍼런스 예제
     ├── 02_reference_quiz.rs         # 레퍼런스 퀴즈
-    ├── 03_mutable_reference.rs      # 가변 레퍼런스 예제
     ├── 03_mutable_reference_quiz.rs # 가변 레퍼런스 퀴즈
-    ├── 04_closure_ownership.rs      # 클로저와 소유권 예제
     └── 04_closure_ownership_quiz.rs # 클로저와 소유권 퀴즈
 ```
+
+각 퀴즈 파일에는 `/* TODO */` 빈칸이 있습니다. 빈칸을 채워서 프로그램을 완성하세요.
 
 ## 실행 방법
 
 ```bash
-# 예제 실행
-cargo run --bin 01_ownership_basics
-cargo run --bin 02_reference
-cargo run --bin 03_mutable_reference
-cargo run --bin 04_closure_ownership
-
-# 퀴즈 실행 (TODO 채운 후)
+# 퀴즈 실행 (TODO를 채운 후)
 cargo run --bin 01_ownership_basics_quiz
 cargo run --bin 02_reference_quiz
 cargo run --bin 03_mutable_reference_quiz

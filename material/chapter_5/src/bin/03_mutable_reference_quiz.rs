@@ -7,8 +7,10 @@ fn main() {
     // 1. 가변 변수 선언 및 수정
     // s를 가변 변수로 선언하고 borrow_object에 가변 레퍼런스로 전달하세요
     println!("=== 가변 레퍼런스 사용 ===");
-    let /* TODO: mut 키워드 */ s = String::from("hello, ");
-    borrow_object(/* TODO: 가변 레퍼런스로 전달 */);
+    /* TODO: mut 키워드 */
+    let mut s = String::from("hello, ");
+    /* TODO: 가변 레퍼런스로 전달 */
+    borrow_object(&mut s);
     println!("결과: {}", s);
 
     // 2. 가변 레퍼런스로 값 수정
@@ -17,6 +19,7 @@ fn main() {
     let mut x = 5;
     let x_ref = &mut x;
     /* TODO: *x_ref로 역참조하여 10 더하기 */
+    *x_ref += 10;
     println!("x = {}", x);  // 기대 출력: x = 15
 
     // 3. 함수에서 가변 레퍼런스 사용
@@ -34,6 +37,8 @@ fn borrow_object(s: &mut String) {
 
 /// 문자열에 ", World!"를 추가하는 함수
 /// 파라미터 타입을 가변 레퍼런스로 수정하고 push_str을 사용하세요
-fn append_greeting(s: /* TODO: 가변 레퍼런스 타입 */) {
+/* TODO: 가변 레퍼런스 타입 */
+fn append_greeting(s: &mut String) {
     /* TODO: s에 ", World!" 추가 */
+    s.push_str(", World!");
 }
