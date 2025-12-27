@@ -5,31 +5,6 @@ edition = "2021"
 
 [dependencies]
 
-# bin 타겟 설정 - 각 예제를 개별적으로 실행 가능
-[[bin]]
-name = "01_print"
-path = "src/bin/01_print.rs"
-
-[[bin]]
-name = "02_variables"
-path = "src/bin/02_variables.rs"
-
-[[bin]]
-name = "03_mutability"
-path = "src/bin/03_mutability.rs"
-
-[[bin]]
-name = "04_shadowing"
-path = "src/bin/04_shadowing.rs"
-
-[[bin]]
-name = "05_types"
-path = "src/bin/05_types.rs"
-
-[[bin]]
-name = "06_constants"
-path = "src/bin/06_constants.rs"
-
 # 연습문제 (quiz) - 빈칸을 채워서 완성하세요
 [[bin]]
 name = "01_print_quiz"

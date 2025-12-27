@@ -2,7 +2,6 @@
 //!
 //! 아래 코드의 빈칸(/* TODO */)을 채워서 프로그램을 완성하세요.
 //! 실행 방법: cargo run --bin 04_shadowing_quiz
-//! 정답 확인: cargo run --bin 04_shadowing
 
 fn main() {
     // =====================
@@ -12,7 +11,8 @@ fn main() {
     // =====================
     let x = 5;
     /* TODO: x를 10으로 섀도잉하세요 */
-    // println!("x = {}", x);
+    let x = 10;
+    println!("x = {}", x);
 
     // =====================
     // 문제 2: 타입 변경 섀도잉
@@ -22,7 +22,8 @@ fn main() {
     // =====================
     let spaces = "     ";
     /* TODO: spaces를 문자열의 길이로 섀도잉하세요 (힌트: .len() 메서드) */
-    // println!("spaces의 길이: {}", spaces);
+    let spaces = spaces.len();
+    println!("spaces의 길이: {}", spaces);
 
     // =====================
     // 문제 3: 연산을 통한 섀도잉
@@ -32,8 +33,10 @@ fn main() {
     // =====================
     let number = 2;
     /* TODO: number를 2배로 섀도잉하세요 (첫 번째) */
+    let number = number * 2;
     /* TODO: number를 2배로 섀도잉하세요 (두 번째) */
-    // println!("최종 number: {}", number);
+    let number = number * 2;
+    println!("최종 number: {}", number);
 
     // =====================
     // 문제 4: 스코프 내 섀도잉
@@ -44,9 +47,10 @@ fn main() {
     let outer = 100;
     {
         /* TODO: outer를 200으로 섀도잉하세요 */
-        // println!("inner: {}", outer);
+        let outer = 200;
+        println!("inner: {}", outer);
     }
-    // println!("outer: {}", outer);
+    println!("outer: {}", outer);
 
     // =====================
     // 문제 5: 문자열 -> 숫자 변환 섀도잉
@@ -57,5 +61,6 @@ fn main() {
     // =====================
     let input = "42";
     /* TODO: input을 정수로 파싱하여 섀도잉하세요 */
-    // println!("변환된 값: {}", input);
+    let input: i32 = input.parse().unwrap();
+    println!("변환된 값: {}", input);
 }

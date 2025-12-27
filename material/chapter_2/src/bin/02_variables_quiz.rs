@@ -2,7 +2,6 @@
 //!
 //! 아래 코드의 빈칸(/* TODO */)을 채워서 프로그램을 완성하세요.
 //! 실행 방법: cargo run --bin 02_variables_quiz
-//! 정답 확인: cargo run --bin 02_variables
 
 fn main() {
     // =====================
@@ -10,7 +9,8 @@ fn main() {
     // i32 타입의 변수 x를 선언하고 42를 할당하세요.
     // =====================
     /* TODO: let 키워드로 x를 선언하세요 (타입 명시) */
-    // println!("x = {}", x);
+    let x: i32 = 42;
+    println!("x = {}", x);
 
     // =====================
     // 문제 2: 타입 추론
@@ -18,14 +18,16 @@ fn main() {
     // 값: 3.14159
     // =====================
     /* TODO: 타입 추론을 사용하여 pi를 선언하세요 */
-    // println!("pi = {}", pi);
+    let pi = 3.14159;
+    println!("pi = {}", pi);
 
     // =====================
     // 문제 3: 불리언 변수
     // is_active라는 이름의 bool 변수를 true로 선언하세요.
     // =====================
     /* TODO: bool 타입 변수를 선언하세요 */
-    // println!("is_active = {}", is_active);
+    let is_active: bool = true;
+    println!("is_active = {}", is_active);
 
     // =====================
     // 문제 4: 문자열 변수
@@ -33,14 +35,16 @@ fn main() {
     // (힌트: &str 타입 사용)
     // =====================
     /* TODO: 문자열 변수를 선언하세요 */
-    // println!("greeting = {}", greeting);
+    let greeting: &str = "안녕하세요";
+    println!("greeting = {}", greeting);
 
     // =====================
     // 문제 5: 튜플 디스트럭처링
     // (1, 2, 3) 튜플을 first, second, third 변수로 분해하세요.
     // =====================
     /* TODO: 튜플 디스트럭처링을 사용하세요 */
-    // println!("first = {}, second = {}, third = {}", first, second, third);
+    let (first, second, third) = (1, 2, 3);
+    println!("first = {}, second = {}, third = {}", first, second, third);
 
     // =====================
     // 문제 6: 변수 네이밍
@@ -48,5 +52,6 @@ fn main() {
     // 변수를 선언하고 100을 할당하세요.
     // =====================
     /* TODO: snake_case 변수를 선언하세요 */
-    // println!("최대 사용자 수 = {}", max_user_count);
+    let max_user_count = 100;
+    println!("최대 사용자 수 = {}", max_user_count);
 }

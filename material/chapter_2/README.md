@@ -28,7 +28,7 @@ let x = 10;
 println!("x = {}", x);
 ```
 
-- `{:?}` 이건 debug 라는 rust의 표준라이브러리의 trait의 일종이다. 
+- `{:?}` 이건 debug 라는 rust의 표준라이브러리의 trait의 일종이다.
 ```rust
 let numbers = [1, 2, 3];
 
@@ -40,7 +40,7 @@ println!("{:#?}", numbers); // 들여쓰기 포함된 출력
 
 ```
 
-> 실습 파일: `src/bin/01_print.rs`
+> 실습 파일: `src/bin/01_print_quiz.rs`
 
 ---
 
@@ -67,7 +67,7 @@ let y = 10;  // 타입 추론
 | 구조체 | PascalCase | `struct MyStruct` |
 | 상수 | SCREAMING_SNAKE_CASE | `const MAX_VALUE: i32 = 100;` |
 
-> 실습 파일: `src/bin/02_variables.rs`
+> 실습 파일: `src/bin/02_variables_quiz.rs`
 
 ---
 
@@ -87,7 +87,7 @@ let mut x = 1;
 x = 2;  // OK
 ```
 
-> 실습 파일: `src/bin/03_mutability.rs`
+> 실습 파일: `src/bin/03_mutability_quiz.rs`
 
 ---
 
@@ -104,7 +104,7 @@ println!("{}", x); // 6 출력
 - 불변 변수의 값을 변경하는 것과는 다름
 - 타입도 변경 가능
 
-> 실습 파일: `src/bin/04_shadowing.rs`
+> 실습 파일: `src/bin/04_shadowing_quiz.rs`
 
 ---
 
@@ -138,7 +138,7 @@ let y = x as i32;  // 1
 println!("{} -> {}", x, y);
 ```
 
-> 실습 파일: `src/bin/05_types.rs`
+> 실습 파일: `src/bin/05_types_quiz.rs`
 
 ---
 
@@ -158,7 +158,7 @@ fn is_big(n: i32) -> bool {
 - 전역 스코프에서 선언 가능
 - 컴파일 타임에 값이 결정됨
 
-> 실습 파일: `src/bin/06_constants.rs`
+> 실습 파일: `src/bin/06_constants_quiz.rs`
 
 ---
 
@@ -166,50 +166,28 @@ fn is_big(n: i32) -> bool {
 
 ```
 src/bin/
-├── 01_print.rs           # 정답: 값 출력하기
-├── 01_print_quiz.rs      # 문제: 빈칸 채우기
-├── 02_variables.rs       # 정답: 변수 선언
-├── 02_variables_quiz.rs  # 문제: 빈칸 채우기
-├── 03_mutability.rs      # 정답: 불변성과 mut
-├── 03_mutability_quiz.rs # 문제: 빈칸 채우기
-├── 04_shadowing.rs       # 정답: 섀도잉
-├── 04_shadowing_quiz.rs  # 문제: 빈칸 채우기
-├── 05_types.rs           # 정답: 타입과 캐스팅
-├── 05_types_quiz.rs      # 문제: 빈칸 채우기
-├── 06_constants.rs       # 정답: 상수
-└── 06_constants_quiz.rs  # 문제: 빈칸 채우기
+├── 01_print_quiz.rs      # 값 출력하기
+├── 02_variables_quiz.rs  # 변수 선언
+├── 03_mutability_quiz.rs # 불변성과 mut
+├── 04_shadowing_quiz.rs  # 섀도잉
+├── 05_types_quiz.rs      # 타입과 캐스팅
+└── 06_constants_quiz.rs  # 상수
 ```
 
-- **정답 파일** (`XX_name.rs`): 완성된 예제 코드
-- **문제 파일** (`XX_name_quiz.rs`): `/* TODO */` 빈칸을 채워서 완성하는 문제지
+각 퀴즈 파일에는 `/* TODO */` 빈칸이 있습니다. 빈칸을 채워서 프로그램을 완성하세요.
 
 ---
 
 ## 실행 방법
 
-### 정답 실행 (학습용)
-
 ```bash
-cargo run --bin 01_print
-cargo run --bin 02_variables
-cargo run --bin 03_mutability
-cargo run --bin 04_shadowing
-cargo run --bin 05_types
-cargo run --bin 06_constants
-```
-
-### 문제 풀이
-
-1. `*_quiz.rs` 파일을 열어 `/* TODO */` 부분을 채웁니다
-2. 주석 처리된 `println!` 문을 해제합니다
-3. 실행하여 결과를 확인합니다
-
-```bash
-# 문제 실행
+# 퀴즈 실행 (TODO를 채운 후)
 cargo run --bin 01_print_quiz
-
-# 정답과 비교
-cargo run --bin 01_print
+cargo run --bin 02_variables_quiz
+cargo run --bin 03_mutability_quiz
+cargo run --bin 04_shadowing_quiz
+cargo run --bin 05_types_quiz
+cargo run --bin 06_constants_quiz
 ```
 
 ---
