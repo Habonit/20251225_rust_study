@@ -17,29 +17,19 @@ chapter_4/
 ├── Cargo.toml
 ├── README.md
 └── src/bin/
-    ├── 01_if_else.rs          # 조건문 예제
     ├── 01_if_else_quiz.rs     # 조건문 퀴즈
-    ├── 02_for_loop.rs         # for 반복문 예제
     ├── 02_for_loop_quiz.rs    # for 반복문 퀴즈
-    ├── 03_while_loop.rs       # while 반복문 예제
     ├── 03_while_loop_quiz.rs  # while 반복문 퀴즈
-    ├── 04_loop.rs             # loop 예제
     ├── 04_loop_quiz.rs        # loop 퀴즈
-    ├── 05_match.rs            # match 패턴매칭 예제
     └── 05_match_quiz.rs       # match 퀴즈
 ```
+
+각 퀴즈 파일에는 `/* TODO */` 빈칸이 있습니다. 빈칸을 채워서 프로그램을 완성하세요.
 
 ## 실행 방법
 
 ```bash
-# 예제 실행
-cargo run --bin 01_if_else
-cargo run --bin 02_for_loop
-cargo run --bin 03_while_loop
-cargo run --bin 04_loop
-cargo run --bin 05_match
-
-# 퀴즈 실행 (TODO 채운 후)
+# 퀴즈 실행 (TODO를 채운 후)
 cargo run --bin 01_if_else_quiz
 cargo run --bin 02_for_loop_quiz
 cargo run --bin 03_while_loop_quiz

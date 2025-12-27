@@ -2,7 +2,6 @@
 //!
 //! 아래 코드의 빈칸(/* TODO */)을 채워서 프로그램을 완성하세요.
 //! 실행 방법: cargo run --bin 03_mutability_quiz
-//! 정답 확인: cargo run --bin 03_mutability
 
 fn main() {
     // =====================
@@ -10,14 +9,16 @@ fn main() {
     // 값을 변경할 수 있는 변수 count를 0으로 선언하세요.
     // =====================
     /* TODO: 가변 변수 count를 선언하세요 */
-    // println!("count 초기값: {}", count);
+    let mut count = 0;
+    println!("count 초기값: {}", count);
 
     // =====================
     // 문제 2: 가변 변수 값 변경
     // count의 값을 10으로 변경하세요.
     // =====================
     /* TODO: count 값을 10으로 변경하세요 */
-    // println!("count 변경 후: {}", count);
+    count = 10;
+    println!("count 변경 후: {}", count);
 
     // =====================
     // 문제 3: 복합 대입 연산자
@@ -25,16 +26,19 @@ fn main() {
     // (힌트: += 연산자 사용)
     // =====================
     /* TODO: mut 변수 score를 선언하고 50을 할당하세요 */
+    let mut score = 50;
     /* TODO: score에 25를 더하세요 */
-    // println!("score = {}", score);
+    score += 25;
+    println!("score = {}", score);
 
     // =====================
     // 문제 4: 에러 수정하기
     // 아래 코드는 컴파일 에러가 발생합니다.
     // 코드를 수정하여 에러를 해결하세요.
     // =====================
-    let temperature = 20;
-    // temperature = 25;  // TODO: 이 줄이 동작하도록 위의 선언을 수정하세요
+    /* TODO: mut 키워드를 추가하세요 */
+    let mut temperature = 20;
+    temperature = 25;
     println!("temperature = {}", temperature);
 
     // =====================
@@ -44,7 +48,9 @@ fn main() {
     // 변경값: "완료"
     // =====================
     /* TODO: 가변 문자열 변수를 선언하세요 */
-    // println!("상태: {}", message);
+    let mut message = "시작";
+    println!("상태: {}", message);
     /* TODO: message를 "완료"로 변경하세요 */
-    // println!("상태: {}", message);
+    message = "완료";
+    println!("상태: {}", message);
 }

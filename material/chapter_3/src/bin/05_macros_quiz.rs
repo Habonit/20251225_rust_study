@@ -19,7 +19,8 @@ macro_rules! get_sum {
 macro_rules! debug_print {
     ($val:expr) => {
         // 힌트: stringify!는 표현식을 문자열로 변환합니다
-        println!("[DEBUG] {} = {:?}", /* TODO: stringify! 매크로 사용 */, $val);
+        /* TODO: stringify! 매크로 사용 */
+        println!("[DEBUG] {} = {:?}", stringify!($val), $val);
     };
 }
 
@@ -41,25 +42,29 @@ fn main() {
     // println! - 가변 개수 인수
     println!("인수 1개");
     // 힌트: {}는 포맷 플레이스홀더입니다
-    println!("인수 2개: {}", /* TODO: 42 */);
+    /* TODO: 42 */
+    println!("인수 2개: {}", 42);
     println!("{} + {} = {}", 1, 2, 3);
 
     // vec! - 벡터 생성
     // 힌트: vec![값들] 또는 vec![초기값; 개수]
-    let v1 = /* TODO: 1, 2, 3을 담은 벡터 생성 */;
+    /* TODO: 1, 2, 3을 담은 벡터 생성 */
+    let v1 = vec![1, 2, 3];
     let v2 = vec![0; 5];  // [0, 0, 0, 0, 0]
     println!("vec!: {:?}, {:?}", v1, v2);
 
     // format! - 문자열 포맷팅
     let name = "Rust";
     // 힌트: format!은 println!과 같은 형식이지만 String을 반환합니다
-    let formatted = /* TODO: format! 매크로로 "Hello, {name}!" 생성 */;
+    /* TODO: format! 매크로로 "Hello, {name}!" 생성 */
+    let formatted = format!("Hello, {}!", name);
     println!("format!: {}", formatted);
 
     // 2. 사용자 정의 매크로: get_sum!
     println!("\n=== get_sum! 매크로 ===");
     // 힌트: 매크로 호출은 함수 호출과 비슷하지만 !가 붙습니다
-    println!("get_sum!(1, 2) = {}", /* TODO: get_sum! 매크로 호출 */);
+    /* TODO: get_sum! 매크로 호출 */
+    println!("get_sum!(1, 2) = {}", get_sum!(1, 2));
     println!("get_sum!(1, 2, 3) = {}", get_sum!(1, 2, 3));
     println!("get_sum!(1, 2, 3, 4, 5) = {}", get_sum!(1, 2, 3, 4, 5));
 
@@ -68,6 +73,7 @@ fn main() {
     let x = 42;
     let numbers = vec![1, 2, 3];
     /* TODO: debug_print! 매크로로 x 출력 */
+    debug_print!(x);
     debug_print!(numbers);
     debug_print!(1 + 2 * 3);
 
@@ -77,6 +83,7 @@ fn main() {
     let b = 20;
     let c = 30;
     /* TODO: print_vars! 매크로로 a, b, c 한번에 출력 */
+    print_vars!(a, b, c);
 
     // 5. 매크로와 함수의 차이
     println!("\n=== 매크로 vs 함수 ===");
@@ -90,12 +97,14 @@ fn main() {
 
     // dbg! - 디버깅용 출력
     // 힌트: dbg!는 표현식의 값을 출력하고 그 값을 반환합니다
-    let result = /* TODO: dbg! 매크로로 2 + 2 계산 */;
+    /* TODO: dbg! 매크로로 2 + 2 계산 */
+    let result = dbg!(2 + 2);
     println!("result = {}", result);
 
     // assert! - 조건 확인
     // 힌트: 조건이 false면 패닉 발생
     /* TODO: assert! 매크로로 1 + 1 == 2 확인 */
+    assert!(1 + 1 == 2);
     println!("assert! 통과");
 
     // panic! - 프로그램 중단 (주석 처리)
@@ -109,6 +118,7 @@ fn main() {
     match value {
         1 => println!("1입니다"),
         // 힌트: unreachable!은 절대 실행되지 않아야 하는 코드에 사용
-        _ => /* TODO: unreachable! 매크로 사용 */,
+        /* TODO: unreachable! 매크로 사용 */
+        _ => unreachable!(),
     }
 }
