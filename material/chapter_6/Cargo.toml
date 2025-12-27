@@ -1,0 +1,31 @@
+[package]
+name = "chapter_6"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+# 연습문제 (quiz) - 빈칸을 채워서 완성하세요
+[[bin]]
+name = "01_vector_quiz"
+path = "src/bin/01_vector_quiz.rs"
+
+[[bin]]
+name = "02_array_tuple_quiz"
+path = "src/bin/02_array_tuple_quiz.rs"
+
+[[bin]]
+name = "03_hashmap_quiz"
+path = "src/bin/03_hashmap_quiz.rs"
+
+[[bin]]
+name = "04_string_quiz"
+path = "src/bin/04_string_quiz.rs"
+
+[[bin]]
+name = "05_enum_quiz"
+path = "src/bin/05_enum_quiz.rs"
+
+[[bin]]
+name = "06_iterator_quiz"
+path = "src/bin/06_iterator_quiz.rs"

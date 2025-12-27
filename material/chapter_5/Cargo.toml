@@ -1,0 +1,23 @@
+[package]
+name = "chapter_5"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+# 연습문제 (quiz) - 빈칸을 채워서 완성하세요
+[[bin]]
+name = "01_ownership_basics_quiz"
+path = "src/bin/01_ownership_basics_quiz.rs"
+
+[[bin]]
+name = "02_reference_quiz"
+path = "src/bin/02_reference_quiz.rs"
+
+[[bin]]
+name = "03_mutable_reference_quiz"
+path = "src/bin/03_mutable_reference_quiz.rs"
+
+[[bin]]
+name = "04_closure_ownership_quiz"
+path = "src/bin/04_closure_ownership_quiz.rs"

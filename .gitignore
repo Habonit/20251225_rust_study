@@ -1,2 +1,4 @@
-rust_part/target
+rust_part/target/
+material/*/target/
+
 .env

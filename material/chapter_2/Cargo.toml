@@ -1,0 +1,31 @@
+[package]
+name = "chapter_2"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+
+# 연습문제 (quiz) - 빈칸을 채워서 완성하세요
+[[bin]]
+name = "01_print_quiz"
+path = "src/bin/01_print_quiz.rs"
+
+[[bin]]
+name = "02_variables_quiz"
+path = "src/bin/02_variables_quiz.rs"
+
+[[bin]]
+name = "03_mutability_quiz"
+path = "src/bin/03_mutability_quiz.rs"
+
+[[bin]]
+name = "04_shadowing_quiz"
+path = "src/bin/04_shadowing_quiz.rs"
+
+[[bin]]
+name = "05_types_quiz"
+path = "src/bin/05_types_quiz.rs"
+
+[[bin]]
+name = "06_constants_quiz"
+path = "src/bin/06_constants_quiz.rs"

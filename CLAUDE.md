@@ -100,3 +100,100 @@ Claude Code는 다음 Git/GitHub 작업을 **절대 수행하지 않는다**:
 - 환경변수를 소스 파일에 하드코딩 금지
 
 ---
+
+## 7. 학습 자료 생성 규칙
+
+사용자가 챕터별 학습 자료를 요청하면 다음 형식을 따른다. 이때 퀴즈와 정답의 세트수는 6개를 넘지 않아야 하며 한 스크립트의 문제 구성은 최대 6문제로 제한한다. 그리고 pdf에 나온 내용 위주로 작성할 것
+
+### 7.1 디렉토리 구조
+
+```
+material/chapter_N/
+├── Cargo.toml
+├── README.md
+└── src/bin/
+    ├── 01_concept.rs       (정답 파일)
+    ├── 01_concept_quiz.rs  (퀴즈 파일)
+    ├── 02_concept.rs
+    ├── 02_concept_quiz.rs
+    └── ...
+```
+
+### 7.2 참조 자료
+
+- PDF 강의 자료: `material/pdf/chN.pdf`
+- PDF 내용을 기반으로 개념별 파일 구성
+
+### 7.3 Cargo.toml 설정
+
+```toml
+[package]
+name = "chapter_N"
+version = "0.1.0"
+edition = "2021"
+
+[[bin]]
+name = "01_concept"
+path = "src/bin/01_concept.rs"
+
+[[bin]]
+name = "01_concept_quiz"
+path = "src/bin/01_concept_quiz.rs"
+# ... 각 파일마다 [[bin]] 추가
+```
+
+### 7.4 README.md 구성
+
+1. 챕터 제목 및 학습 목표
+2. 파일 구조 설명 (정답/퀴즈 쌍)
+3. 개념별 학습 내용 요약
+4. 실행 방법 (`cargo run --bin 파일명`)
+5. 연습 문제 안내
+
+### 7.5 정답 파일 형식
+
+```rust
+//! 개념 설명 - 부제목
+//!
+//! 상세 설명
+
+/// 함수/구조체 설명
+/// # Arguments, # Returns 등 문서화
+fn example() {
+    // 한글 주석으로 설명
+    println!("예제 코드");
+}
+
+fn main() {
+    // 섹션별로 구분하여 예제 실행
+    println!("=== 섹션 제목 ===");
+    // 예제 코드...
+}
+```
+
+### 7.6 퀴즈 파일 형식
+
+```rust
+//! 개념 설명 (퀴즈)
+//!
+//! 아래 코드의 빈칸(/* TODO */)을 채워서 프로그램을 완성하세요.
+
+fn example() {
+    // 힌트: 설명
+    let x = /* TODO */;
+    let y = /* TODO: 구체적인 힌트 */;
+}
+```
+
+- `/* TODO */`: 단순 빈칸
+- `/* TODO: 힌트 */`: 힌트가 포함된 빈칸
+- 정답 파일과 동일한 구조 유지
+- 빌드되지 않아도 됨 (학습자가 완성해야 함)
+
+### 7.7 파일 네이밍
+
+- `NN_concept.rs`: 숫자 2자리 + 언더스코어 + 개념명
+- `NN_concept_quiz.rs`: 정답 파일명 + `_quiz`
+- 개념명은 snake_case 사용
+
+---
